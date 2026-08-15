@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <script>
+      (function() {
+        try {
+          if (typeof window !== 'undefined' && window.fetch) {
+            var _nativeFetch = window.fetch.bind(window);
+            var _currentFetch = _nativeFetch;
+            Object.defineProperty(window, 'fetch', {
+              get: function() {
+                return _currentFetch;
+              },
+              set: function(fn) {
+                _currentFetch = fn;
+              },
+              configurable: true,
+              enumerable: true
+            });
+          }
+        } catch (e) {
+          console.warn('Fetch patch ignored:', e);
+        }
+      })();
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Age Calculator - Calculate Exact Age in Years, Months, Days & Seconds</title>
+    <meta name="description" content="Free, fast, and accurate online Age Calculator. Calculate your exact age in years, months, days, total weeks, hours, minutes, and seconds with leap year precision." />
+    <meta name="keywords" content="age calculator, calculate age, age in days, exact age calculator, date of birth calculator, how old am i, birthday countdown" />
+    <meta name="author" content="Age Calculator App" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://agecalculator.app/" />
+    <meta property="og:title" content="Free Online Age Calculator - Accurate Age in Years, Months, Days" />
+    <meta property="og:description" content="Calculate your exact age instantly. Shows age breakdown in years, months, days, total hours, minutes, seconds, and next birthday countdown." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://agecalculator.app/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Free Online Age Calculator" />
+    <meta name="twitter:description" content="Calculate your exact age in years, months, days, and seconds instantly." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body class="bg-slate-50 text-slate-900 font-sans antialiased selection:bg-indigo-500 selection:text-white">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
